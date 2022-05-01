@@ -1,0 +1,4 @@
+.DS_Store
+.vscode
+
+examples/*/arduino_secrets.h
