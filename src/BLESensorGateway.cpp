@@ -47,6 +47,7 @@ void BLESensorGatewayClass::_beginBLE() {
   if (_state == State::BLE) return;
   if (_state == State::WIFI) {
     _conn->disconnect();
+    WiFi.end();
   }
 
   Serial.println("Initializing BLE client...");

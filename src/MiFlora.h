@@ -2,7 +2,7 @@
    See https://github.com/ChrisScheffler/miflora/wiki/The-Basics for details on the protocol.
 */
 
-#include <ArduinoBLE.h>
+#include <rduinoBLE.h>
 #include <functional>
 #include <map>
 
@@ -102,6 +102,9 @@ std::function<bool(BLEDevice&)> MiFlora_handler(MiFlora_callback_t cb) {
       Serial.print("-- Battery: ");
       Serial.println(data.battery);    
     }
+
+    device.disconnect();
+    delay(2000);
 
     cb(device.address(), data);
 
